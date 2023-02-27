@@ -26,6 +26,7 @@ export async function getServerSideProps(context: GetServerSideProps) {
 export default function Home({
   isConnected,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log(process.env.MONGODB_URI);
   const getData = async () => {
     const res = await fetch("/api/insert");
     const data = await res.json();
